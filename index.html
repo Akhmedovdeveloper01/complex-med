@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complex Med Clinic</title>
+  <meta name="description" content="Complex Med Clinic — zamonaviy klinika: kardiologiya, endokrinologiya, nevrologiya, LOR, UZI va boshqa xizmatlar." />
+  <meta name="theme-color" content="#2a979b" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <script>
+    // Apply saved theme/lang before paint to avoid flashes
+    (function () {
+      try {
+        var t = localStorage.getItem('cm-theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('cm-lang');
+        if (l) document.documentElement.setAttribute('lang', l);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__logo"><svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M78.2 24.6 A38 38 0 1 0 79.1 74.4 A2.25 2.25 0 0 0 75.7 71.5 A33.5 33.5 0 0 1 16.5 50 H25"/><circle cx="82.6" cy="20.4" r="5.2"/><path d="M66.1 32.2 A24 24 0 1 0 66.1 67.8"/><path class="logo-svg__chest" d="M24.8 41.8 A26.5 26.5 0 0 0 24.8 58.2"/><circle class="logo-svg__dot" cx="66.1" cy="32.2" r="4.2"/><circle class="logo-svg__dot" cx="66.1" cy="67.8" r="4.2"/></svg></div>
+    <div class="preloader__brand">Complex<span>Med</span></div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#home" class="logo" aria-label="Complex Med Clinic">
+        <span class="logo__mark">
+          <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M78.2 24.6 A38 38 0 1 0 79.1 74.4 A2.25 2.25 0 0 0 75.7 71.5 A33.5 33.5 0 0 1 16.5 50 H25"/><circle cx="82.6" cy="20.4" r="5.2"/><path d="M66.1 32.2 A24 24 0 1 0 66.1 67.8"/><path class="logo-svg__chest" d="M24.8 41.8 A26.5 26.5 0 0 0 24.8 58.2"/><circle class="logo-svg__dot" cx="66.1" cy="32.2" r="4.2"/><circle class="logo-svg__dot" cx="66.1" cy="67.8" r="4.2"/></svg>
+        </span>
+        <span class="logo__text">Complex<b>Med</b><small>Clinic</small></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about" data-i18n="nav.about"></a>
+        <a href="#directions" data-i18n="nav.directions"></a>
+        <a href="#services" data-i18n="nav.services"></a>
+        <a href="#doctors" data-i18n="nav.doctors"></a>
+        <a href="#videos" data-i18n="nav.videos"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button data-lang="uz">UZ</button>
+          <button data-lang="ru">RU</button>
+          <span class="lang-switch__pill"></span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+        </button>
+        <a href="tel:+998954341010" class="btn btn--primary btn--sm header__call magnetic">
+          <svg viewBox="0 0 24 24" class="i"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+998 95 434 10 10</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="badge reveal">
+            <span class="badge__dot"></span>
+            <span data-i18n="hero.badge"></span>
+          </div>
+          <h1 class="hero__title reveal" data-i18n-html="hero.title"></h1>
+          <p class="hero__text reveal" data-i18n="hero.text"></p>
+          <div class="hero__cta reveal">
+            <button class="btn btn--primary btn--lg magnetic" data-open-booking>
+              <span data-i18n="cta.book"></span>
+              <svg viewBox="0 0 24 24" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <a href="#doctors" class="btn btn--ghost btn--lg" data-i18n="cta.doctors"></a>
+          </div>
+
+          <div class="hero__stats reveal">
+            <div class="stat">
+              <b><span class="counter" data-to="11">0</span>+</b>
+              <span data-i18n="stats.doctors"></span>
+            </div>
+            <div class="stat">
+              <b><span class="counter" data-to="160">0</span>+</b>
+              <span data-i18n="stats.experience"></span>
+            </div>
+            <div class="stat">
+              <b><span class="counter" data-to="10">0</span></b>
+              <span data-i18n="stats.directions"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" id="heroVisual">
+          <div class="hero-card hero-card--main tilt">
+            <div class="hero-card__head">
+              <span class="pulse-dot"></span>
+              <span data-i18n="hero.monitor"></span>
+              <b class="hero-card__bpm"><span id="bpm">72</span> BPM</b>
+            </div>
+            <svg class="ecg" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="ecgGrad" x1="0" x2="1">
+                  <stop offset="0" stop-color="var(--primary)" stop-opacity="0"/>
+                  <stop offset=".3" stop-color="var(--primary)"/>
+                  <stop offset="1" stop-color="var(--accent)"/>
+                </linearGradient>
+              </defs>
+              <path class="ecg__line" d="M0 60 H50 L60 60 L68 30 L78 100 L88 20 L96 60 H150 L160 50 L170 60 H200 L210 60 L218 30 L228 100 L238 20 L246 60 H300 L310 50 L320 60 H400"/>
+            </svg>
+            <div class="hero-card__row">
+              <div><small data-i18n="hero.hours"></small><b>08:30 – 17:00</b></div>
+              <div><small data-i18n="hero.days"></small><b data-i18n="hero.daysVal"></b></div>
+            </div>
+          </div>
+
+          <div class="float-chip float-chip--1">
+            <span class="float-chip__icon" data-icon="heart"></span>
+            <div><b data-i18n="dir.cardio"></b><small data-i18n="hero.chip1"></small></div>
+          </div>
+          <div class="float-chip float-chip--2">
+            <span class="float-chip__icon" data-icon="award"></span>
+            <div><b data-i18n="hero.chip2t"></b><small data-i18n="hero.chip2"></small></div>
+          </div>
+          <div class="float-chip float-chip--3">
+            <span class="float-chip__icon" data-icon="flask"></span>
+            <div><b data-i18n="svc.lab"></b><small data-i18n="hero.chip3"></small></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll"><span></span></a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about__inner">
+        <div class="about__media reveal">
+          <div class="about__shape tilt">
+            <div class="about__cross">
+              <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M78.2 24.6 A38 38 0 1 0 79.1 74.4 A2.25 2.25 0 0 0 75.7 71.5 A33.5 33.5 0 0 1 16.5 50 H25"/><circle cx="82.6" cy="20.4" r="5.2"/><path d="M66.1 32.2 A24 24 0 1 0 66.1 67.8"/><path class="logo-svg__chest" d="M24.8 41.8 A26.5 26.5 0 0 0 24.8 58.2"/><circle class="logo-svg__dot" cx="66.1" cy="32.2" r="4.2"/><circle class="logo-svg__dot" cx="66.1" cy="67.8" r="4.2"/></svg>
+            </div>
+            <div class="about__ring about__ring--1"></div>
+            <div class="about__ring about__ring--2"></div>
+            <div class="about__ring about__ring--3"></div>
+          </div>
+          <div class="about__floating">
+            <b><span class="counter" data-to="38">0</span></b>
+            <span data-i18n="about.maxExp"></span>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="eyebrow reveal" data-i18n="about.eyebrow"></span>
+          <h2 class="section__title reveal" data-i18n-html="about.title"></h2>
+          <p class="reveal" data-i18n="about.p1"></p>
+          <p class="reveal" data-i18n="about.p2"></p>
+
+          <div class="features">
+            <div class="feature reveal spotlight">
+              <span class="feature__icon" data-icon="shield"></span>
+              <div><b data-i18n="about.f1t"></b><small data-i18n="about.f1"></small></div>
+            </div>
+            <div class="feature reveal spotlight">
+              <span class="feature__icon" data-icon="users"></span>
+              <div><b data-i18n="about.f2t"></b><small data-i18n="about.f2"></small></div>
+            </div>
+            <div class="feature reveal spotlight">
+              <span class="feature__icon" data-icon="baby"></span>
+              <div><b data-i18n="about.f3t"></b><small data-i18n="about.f3"></small></div>
+            </div>
+            <div class="feature reveal spotlight">
+              <span class="feature__icon" data-icon="sparkle"></span>
+              <div><b data-i18n="about.f4t"></b><small data-i18n="about.f4"></small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Directions -->
+    <section class="section directions" id="directions">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-i18n="dir.eyebrow"></span>
+          <h2 class="section__title reveal" data-i18n-html="dir.title"></h2>
+          <p class="section__sub reveal" data-i18n="dir.sub"></p>
+        </div>
+        <div class="dir-grid" id="dirGrid"></div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="services">
+      <div class="container services__inner">
+        <div class="services__aside">
+          <span class="eyebrow reveal" data-i18n="svc.eyebrow"></span>
+          <h2 class="section__title reveal" data-i18n-html="svc.title"></h2>
+          <p class="section__sub reveal" data-i18n="svc.sub"></p>
+          <button class="btn btn--primary magnetic reveal" data-open-booking>
+            <span data-i18n="cta.book"></span>
+            <svg viewBox="0 0 24 24" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="svc-list" id="svcList"></div>
+      </div>
+    </section>
+
+    <!-- Doctors -->
+    <section class="section doctors" id="doctors">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-i18n="doc.eyebrow"></span>
+          <h2 class="section__title reveal" data-i18n-html="doc.title"></h2>
+          <p class="section__sub reveal" data-i18n="doc.sub"></p>
+        </div>
+
+        <div class="doc-toolbar reveal">
+          <div class="search">
+            <svg viewBox="0 0 24 24" class="i"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input type="search" id="docSearch" data-i18n-placeholder="doc.search" />
+          </div>
+          <div class="chips" id="docFilters"></div>
+        </div>
+
+        <div class="doc-grid" id="docGrid"></div>
+        <p class="doc-empty" id="docEmpty" data-i18n="doc.empty" hidden></p>
+      </div>
+    </section>
+
+    <!-- Videos -->
+    <section class="section videos" id="videos">
+      <div class="container">
+        <div class="videos__head">
+          <div>
+            <span class="eyebrow reveal" data-i18n="vid.eyebrow"></span>
+            <h2 class="section__title reveal" data-i18n-html="vid.title"></h2>
+            <p class="section__sub reveal" data-i18n="vid.sub"></p>
+          </div>
+          <div class="videos__controls reveal">
+            <div class="chips" id="vidFilters"></div>
+            <div class="videos__nav">
+              <button class="round-btn" id="vidPrev" aria-label="Previous"><svg viewBox="0 0 24 24" class="i"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+              <button class="round-btn" id="vidNext" aria-label="Next"><svg viewBox="0 0 24 24" class="i"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vid-track" id="vidTrack"></div>
+      <div class="container videos__foot reveal">
+        <a href="https://www.youtube.com/@Complexmeduz" target="_blank" rel="noopener" class="btn btn--yt magnetic">
+          <svg viewBox="0 0 24 24" class="i"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+          <span data-i18n="vid.channel"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA / Booking -->
+    <section class="section cta" id="booking">
+      <div class="container">
+        <div class="cta__box reveal">
+          <div class="cta__bg" aria-hidden="true"><span></span><span></span></div>
+          <div class="cta__content">
+            <h2 data-i18n-html="cta.title"></h2>
+            <p data-i18n="cta.text"></p>
+            <div class="cta__actions">
+              <a href="tel:+998954341010" class="btn btn--white btn--lg magnetic">
+                <svg viewBox="0 0 24 24" class="i"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +998 95 434 10 10
+              </a>
+              <button class="btn btn--outline-white btn--lg" data-open-booking data-i18n="cta.online"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Location -->
+    <section class="section location" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow reveal" data-i18n="loc.eyebrow"></span>
+          <h2 class="section__title reveal" data-i18n-html="loc.title"></h2>
+        </div>
+
+        <div class="loc reveal">
+          <div class="loc__info">
+            <div class="loc__item">
+              <span class="loc__icon"><svg viewBox="0 0 24 24" class="i"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div>
+                <small data-i18n="loc.address"></small>
+                <b data-i18n="loc.addressVal"></b>
+                <span class="loc__code">Plus code: 75RV+57P</span>
+              </div>
+            </div>
+            <div class="loc__item">
+              <span class="loc__icon" data-icon="phone"></span>
+              <div>
+                <small data-i18n="loc.phone"></small>
+                <a href="tel:+998954341010"><b>+998 95 434 10 10</b></a>
+              </div>
+            </div>
+            <div class="loc__item">
+              <span class="loc__icon" data-icon="clock"></span>
+              <div>
+                <small data-i18n="footer.hours"></small>
+                <b data-i18n="footer.hoursVal"></b>
+                <span class="loc__status" id="openStatus"></span>
+              </div>
+            </div>
+
+            <div class="loc__actions">
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.290454,69.1931924" target="_blank" rel="noopener" class="btn btn--primary btn--block magnetic">
+                <svg viewBox="0 0 24 24" class="i"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg>
+                <span data-i18n="loc.route"></span>
+              </a>
+              <div class="loc__maps">
+                <a href="https://maps.app.goo.gl/gDVRov6oBf4AxbdL8" target="_blank" rel="noopener" class="map-chip">
+                  <span class="map-chip__dot map-chip__dot--g"></span>Google Maps
+                </a>
+                <a href="https://yandex.uz/maps/?pt=69.1931924,41.290454&amp;z=17&amp;l=map" target="_blank" rel="noopener" class="map-chip">
+                  <span class="map-chip__dot map-chip__dot--y"></span>Yandex Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="loc__map">
+            <iframe id="mapFrame" title="Complex Med Clinic — map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=41.290454,69.1931924&amp;z=16&amp;hl=uz&amp;output=embed"></iframe>
+            <div class="loc__badge">
+              <span class="loc__badge-pulse"></span>
+              <div><b>Complex Med Clinic</b><small data-i18n="loc.district"></small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="logo">
+          <span class="logo__mark"><svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M78.2 24.6 A38 38 0 1 0 79.1 74.4 A2.25 2.25 0 0 0 75.7 71.5 A33.5 33.5 0 0 1 16.5 50 H25"/><circle cx="82.6" cy="20.4" r="5.2"/><path d="M66.1 32.2 A24 24 0 1 0 66.1 67.8"/><path class="logo-svg__chest" d="M24.8 41.8 A26.5 26.5 0 0 0 24.8 58.2"/><circle class="logo-svg__dot" cx="66.1" cy="32.2" r="4.2"/><circle class="logo-svg__dot" cx="66.1" cy="67.8" r="4.2"/></svg></span>
+          <span class="logo__text">Complex<b>Med</b><small>Clinic</small></span>
+        </a>
+        <p data-i18n="footer.about"></p>
+        <div class="socials">
+          <a href="https://www.instagram.com/complexmeduz" target="_blank" rel="noopener" class="social social--ig" aria-label="Instagram"><svg viewBox="0 0 24 24" class="i"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".9" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://t.me/complexmed_clinic" target="_blank" rel="noopener" class="social social--tg" aria-label="Telegram"><svg viewBox="0 0 24 24" class="i"><path d="M21.5 4.2 2.9 11.4c-.9.4-.9 1.5.1 1.8l4.6 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6L22.9 5.6c.2-1-.6-1.8-1.4-1.4z"/><path d="m7.6 14.6 9.9-6.4-7.7 7.3"/></svg></a>
+          <a href="https://www.youtube.com/@Complexmeduz" target="_blank" rel="noopener" class="social social--yt" aria-label="YouTube"><svg viewBox="0 0 24 24" class="i"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+          <a href="tel:+998954341010" class="social" aria-label="Phone"><svg viewBox="0 0 24 24" class="i"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer.contacts"></h4>
+        <a href="tel:+998954341010" class="footer__phone">+998 95 434 10 10</a>
+        <a href="https://www.instagram.com/complexmeduz" target="_blank" rel="noopener" class="footer__ig"><svg viewBox="0 0 24 24" class="i"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".9" fill="currentColor" stroke="none"/></svg> @complexmeduz</a>
+        <a href="https://t.me/complexmed_clinic" target="_blank" rel="noopener" class="footer__ig"><svg viewBox="0 0 24 24" class="i"><path d="M21.5 4.2 2.9 11.4c-.9.4-.9 1.5.1 1.8l4.6 1.4 1.8 5.5c.2.7 1.1.9 1.6.4l2.6-2.4 4.7 3.5c.6.4 1.4.1 1.6-.6L22.9 5.6c.2-1-.6-1.8-1.4-1.4z"/><path d="m7.6 14.6 9.9-6.4-7.7 7.3"/></svg> @complexmed_clinic</a>
+        <a href="https://www.youtube.com/@Complexmeduz" target="_blank" rel="noopener" class="footer__ig"><svg viewBox="0 0 24 24" class="i"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg> @Complexmeduz</a>
+        <a href="https://maps.app.goo.gl/gDVRov6oBf4AxbdL8" target="_blank" rel="noopener" class="footer__ig"><svg viewBox="0 0 24 24" class="i"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> <span data-i18n="loc.addressShort"></span></a>
+        <p><span data-i18n="footer.hours"></span><br /><b data-i18n="footer.hoursVal"></b></p>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="footer.nav"></h4>
+        <a href="#about" data-i18n="nav.about"></a>
+        <a href="#directions" data-i18n="nav.directions"></a>
+        <a href="#services" data-i18n="nav.services"></a>
+        <a href="#doctors" data-i18n="nav.doctors"></a>
+        <a href="#videos" data-i18n="nav.videos"></a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year"></span> Complex Med Clinic. <span data-i18n="footer.rights"></span></span>
+      <a href="#home" class="to-top" aria-label="Top">
+        <svg viewBox="0 0 24 24" class="i"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Floating call button -->
+  <a href="tel:+998954341010" class="fab" aria-label="Call">
+    <svg viewBox="0 0 24 24" class="i"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <!-- Doctor modal -->
+  <div class="modal" id="docModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog" id="docModalBody"></div>
+  </div>
+
+  <!-- Video modal -->
+  <div class="modal modal--video" id="vidModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog modal__dialog--video">
+      <button class="modal__close" data-close aria-label="Close">×</button>
+      <div class="vid-player" id="vidPlayer"></div>
+      <div class="vid-modal__foot">
+        <b id="vidModalTitle"></b>
+        <a id="vidModalLink" href="#" target="_blank" rel="noopener" class="vid-modal__yt"><svg viewBox="0 0 24 24" class="i"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49 49 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49 49 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg> <span data-i18n="vid.openYt"></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking modal -->
+  <div class="modal" id="bookModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__dialog modal__dialog--form">
+      <button class="modal__close" data-close aria-label="Close">×</button>
+      <form id="bookForm" class="book-form" novalidate>
+        <h3 data-i18n="form.title"></h3>
+        <p class="muted" data-i18n="form.sub"></p>
+        <label class="field">
+          <input type="text" name="name" required placeholder=" " />
+          <span data-i18n="form.name"></span>
+        </label>
+        <label class="field">
+          <input type="tel" name="phone" required placeholder=" " value="+998 " />
+          <span data-i18n="form.phone"></span>
+        </label>
+        <label class="field field--select">
+          <select name="doctor" id="bookDoctor"></select>
+          <span data-i18n="form.doctor"></span>
+        </label>
+        <button type="submit" class="btn btn--primary btn--lg btn--block">
+          <span data-i18n="form.submit"></span>
+        </button>
+      </form>
+      <div class="book-success" id="bookSuccess" hidden>
+        <div class="check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-15"/></svg></div>
+        <h3 data-i18n="form.okTitle"></h3>
+        <p class="muted" data-i18n="form.okText"></p>
+        <button class="btn btn--ghost" data-close data-i18n="form.close"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
