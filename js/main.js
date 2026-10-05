@@ -18,6 +18,8 @@
   let activeTag = 'all';
   let query = '';
   let vidType = 'all';
+  let docsExpanded = false;
+  const MOBILE_DOCS = 4;
 
   const t = (key) => (T[lang] && T[lang][key] !== undefined ? T[lang][key] : key);
 
@@ -200,6 +202,7 @@
           <h3>${d.name[lang]}</h3>
           <p class="doc-card__spec">${d.spec[lang]}</p>
           <div class="doc-card__badges">
+            ${d.quals.includes('prof') ? `<span class="pill pill--prof">${icon('award')} ${D.quals.prof[lang].split(' ')[0]}</span>` : ''}
             ${d.quals.filter((q) => q !== 'prof').slice(0, 2).map((q) => `<span class="pill">${D.quals[q][lang]}</span>`).join('')}
           </div>
           <ul class="doc-card__meta">
@@ -217,6 +220,13 @@
           </div>
         </article>`).join('');
       $('#docEmpty').hidden = list.length > 0;
+      // On phones show the first few doctors, the rest behind a "show all" button
+      const collapse = !docsExpanded && list.length > MOBILE_DOCS;
+      grid.classList.toggle('is-collapsed', collapse);
+      const more = $('#docMore');
+      more.hidden = !collapse;
+      more.querySelector('span').textContent = `${t('doc.showAll')} (${list.length})`;
+
       bindSpotlight(grid);
       if (!animate) observeReveal(grid);
     };
@@ -517,6 +527,16 @@
 
     const burger = $('#burger');
     burger.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+    // Close the mobile menu when tapping outside the header
+    document.addEventListener('click', (e) => {
+      if (document.body.classList.contains('nav-open') && !e.target.closest('.header')) document.body.classList.remove('nav-open');
+    });
+
+    $('#docMore').addEventListener('click', () => {
+      docsExpanded = true;
+      $('#docGrid').classList.remove('is-collapsed');
+      $('#docMore').hidden = true;
+    });
     $$('.nav a').forEach((a) => a.addEventListener('click', () => document.body.classList.remove('nav-open')));
 
     $('#docFilters').addEventListener('click', (e) => {

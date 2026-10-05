@@ -127,6 +127,7 @@ window.I18N = {
     'doc.callToBook': "Shifokor qabuliga telefon orqali yozilishingiz mumkin",
     'doc.qual': 'Malaka',
     'doc.site': 'Shaxsiy sayt',
+    'doc.showAll': "Barcha shifokorlar",
     'doc.siteSub': "Batafsil ma'lumot, sertifikatlar va maqolalar",
 
     'days': ['Dushanba', 'Seshanba', 'Chorshanba', 'Payshanba', 'Juma', 'Shanba'],
@@ -281,6 +282,7 @@ window.I18N = {
     'doc.callToBook': 'Записаться на приём к врачу вы можете по телефону',
     'doc.qual': 'Квалификация',
     'doc.site': 'Личный сайт',
+    'doc.showAll': 'Все врачи',
     'doc.siteSub': 'Подробная информация, сертификаты и статьи',
 
     'days': ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
